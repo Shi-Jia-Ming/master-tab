@@ -12,8 +12,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 interface PanelGroupProps {
   children: Array<ReactElement>;
-  handleLeftCollapse: (isCollapsed: boolean) => void;
-  handleRightCollapse: (isCollapsed: boolean) => void;
+  className?: string;
+  handleLeftCollapse?: (isCollapsed: boolean) => void;
+  handleRightCollapse?: (isCollapsed: boolean) => void;
 }
 
 export interface PanelGroupRef {
@@ -118,11 +119,11 @@ const PanelGroup = forwardRef<PanelGroupRef, PanelGroupProps>(
         }, 300);
         if (leftPanelWidth === 0) {
           setLeftPanelWidth(leftWidthCache);
-          props.handleLeftCollapse(false);
+          if (props.handleLeftCollapse) props.handleLeftCollapse(false);
         } else {
           setLeftWidthCache(leftPanelWidth);
           setLeftPanelWidth(0);
-          props.handleLeftCollapse(true);
+          if (props.handleLeftCollapse) props.handleLeftCollapse(true);
         }
         // cannot detect the collapse when user drag the panel to collapse
       },
@@ -133,17 +134,17 @@ const PanelGroup = forwardRef<PanelGroupRef, PanelGroupProps>(
         }, 300);
         if (rightPanelWidth === 0) {
           setRightPanelWidth(rightWidthCache);
-          props.handleRightCollapse(false);
+          if (props.handleRightCollapse) props.handleRightCollapse(false);
         } else {
           setRightWidthCache(rightPanelWidth);
           setRightPanelWidth(0);
-          props.handleRightCollapse(true);
+          if (props.handleRightCollapse) props.handleRightCollapse(true);
         }
       },
     }));
 
     return (
-      <div id={"panel-group"} className={"size-full flex"}>
+      <div id={"panel-group"} className={`size-full flex ${props.className}`}>
         <div
           id={"left-panel-container"}
           className={`h-full ${

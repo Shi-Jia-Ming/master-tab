@@ -8,7 +8,7 @@ export const LeftPanel = ({
   className?: string;
 }) => {
   return (
-    <div id={"left-panel"} className={`${className} size-full`}>
+    <div id={"left-panel"} className={`${className} size-full select-none`}>
       {children}
     </div>
   );
@@ -22,7 +22,7 @@ export const RightPanel = ({
   className?: string;
 }) => {
   return (
-    <div id={"right-panel"} className={`${className} size-full`}>
+    <div id={"right-panel"} className={`${className} size-full select-none`}>
       {children}
     </div>
   );
@@ -36,7 +36,7 @@ export const MainPanel = ({
   className?: string;
 }) => {
   return (
-    <div id={"main-panel"} className={`${className} size-full`}>
+    <div id={"main-panel"} className={`${className} size-full select-none`}>
       {children}
     </div>
   );
