@@ -1,4 +1,3 @@
-import * as React from "react";
 import { motion, Reorder } from "framer-motion";
 import { Ingredient } from "../utils/ingredients";
 import { CloseIcon } from "../icons/CloseIcon";
@@ -20,7 +19,7 @@ export const Tab = ({ item, onClick, onRemove, isSelected }: Props) => {
         opacity: 1,
         backgroundColor: isSelected ? "#f3f3f3" : "#fff",
         y: 0,
-        transition: { duration: 0.15 }
+        transition: { duration: 0.15 },
       }}
       exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
       whileDrag={{ backgroundColor: "#e3e3e3" }}
