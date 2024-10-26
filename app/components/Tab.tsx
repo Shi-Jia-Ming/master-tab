@@ -1,9 +1,9 @@
 import { motion, Reorder } from "framer-motion";
-import { Ingredient } from "../utils/ingredients";
 import { CloseIcon } from "../icons/CloseIcon";
+import { TabContent } from "~/types/tab.type";
 
 interface Props {
-  item: Ingredient;
+  item: TabContent;
   isSelected: boolean;
   onClick: () => void;
   onRemove: () => void;

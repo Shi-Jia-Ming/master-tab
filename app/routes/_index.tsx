@@ -13,6 +13,9 @@ export default function Index() {
         <li>
           <a href="/master/panel">Master Panel</a>
         </li>
+        <li>
+          <a href="/master/dock">Master Dock</a>
+        </li>
       </ul>
     </div>
   );
